@@ -7,10 +7,23 @@ async function start() {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(website);
-    // await page.screenshot({ path: "bestbuy.png", fullPage: true });
-    const reviews = ['great product','terrible product','okay product'];
+    await page.click('#reviews');
+    // currently doesn't wait long enough
+    // await page.waitForSelector('.reviewTitle_1qq1j span', {visible: true});
+    await delay(2000);
+    await page.screenshot({ path: "bestbuy.png", fullPage: true });
+    const reviews = await page.evaluate(() => {
+        return Array.from(document.querySelectorAll(".reviewContent_XCspv p span")).map(x => x.textContent)
+    });
+    console.log(reviews);
     await fs.writeFile('reviews.txt', reviews.join('\r\n'));
     await browser.close();
 }
 
 start();
+
+function delay(time) {
+    return new Promise(function(resolve) {
+        setTimeout(resolve, time)
+    });
+}
