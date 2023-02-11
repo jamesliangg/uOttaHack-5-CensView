@@ -12,12 +12,7 @@ export async function callThisOne(website) {
     else if (website.includes('amazon')) {
         reviewSelector = 'div.a-expander-content.reviewText.review-text-content.a-expander-partial-collapse-content > span';
     }
-    // (async () => {
-    //     let reviewResponse = await scrapeWebsite(website, reviewSelector);
-        // console.log(reviewResponse);
-        // return reviewResponse;
-        return await scrapeWebsite(website, reviewSelector);
-    // })();
+    return await scrapeWebsite(website, reviewSelector);
 }
 
 async function scrapeWebsite(website, reviewSelector) {

@@ -13,10 +13,6 @@ const server = http.createServer((req, res) => {
         console.log(result);
         res.end(result.toString());
     });
-    // (async () => {
-
-    // })();
-    // res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
