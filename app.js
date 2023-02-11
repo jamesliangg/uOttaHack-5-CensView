@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
     console.log(reviewResults);
     reviewResults.then(function(result) {
         console.log(result);
-        res.end(result.toString());
+        res.end(JSON.stringify(result));
     });
 });
 
