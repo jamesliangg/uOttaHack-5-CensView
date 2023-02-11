@@ -1,10 +1,10 @@
-const puppeteer = require('puppeteer');
-const fs = require('fs/promises');
+import puppeteer from "puppeteer";
+import fs from "fs/promises";
 const testWebsite = 'https://www.bestbuy.ca/en-ca/product/sonos-arc-sound-bar-black/14597172';
 // const testWebsite = 'https://www.amazon.ca/dp/B09F1QQZM2';
 
 // puppeteer tutorial https://youtube.com/watch?v=lgyszZhAZOI&feature=shares
-function callThisOne(website) {
+export async function callThisOne(website) {
     let reviewSelector;
     if (website.includes('bestbuy')) {
         reviewSelector = '.reviewContent_XCspv p span';
@@ -12,9 +12,12 @@ function callThisOne(website) {
     else if (website.includes('amazon')) {
         reviewSelector = 'div.a-expander-content.reviewText.review-text-content.a-expander-partial-collapse-content > span';
     }
-    (async () => {
-        console.log(await scrapeWebsite(website, reviewSelector))
-    })()
+    // (async () => {
+    //     let reviewResponse = await scrapeWebsite(website, reviewSelector);
+        // console.log(reviewResponse);
+        // return reviewResponse;
+        return await scrapeWebsite(website, reviewSelector);
+    // })();
 }
 
 async function scrapeWebsite(website, reviewSelector) {
@@ -34,4 +37,10 @@ async function scrapeWebsite(website, reviewSelector) {
     return reviews;
 }
 
-callThisOne(testWebsite);
+// console.log(callThisOne(testWebsite));
+let reviewResults = callThisOne(testWebsite);
+console.log(reviewResults);
+
+reviewResults.then(function(result) {
+    console.log(result);
+});
