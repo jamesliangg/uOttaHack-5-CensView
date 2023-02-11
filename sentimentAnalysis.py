@@ -1,5 +1,6 @@
+from dumby import token
 import cohere 
-co = cohere.Client('mq4vtwKRIq2UVJqCmKSX6kiBVpNJECw8IvIUSpHn')
+co = cohere.Client(token)
 
 from cohere.classify import Example
 
