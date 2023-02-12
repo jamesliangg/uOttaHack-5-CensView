@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="default.css">
+    
+  </head>
+  <body>
+    <h1>CensView</h1>
+    
+    <p>This extension compares and analyzes review data of the site you are visiting.</p>
+    <p>Please click the "Analyze Reviews" button to start the analysis:</p>
+    <button id="myButton" class="analyze-reviews-button">
+      Click me
+    </button>
+
+    <div>
+      <div id="haters">
+        <div id = "neutrals">
+          <div id = "lovers">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="textcontainer">
+      <div class="box">
+        <h3>Number of Positive Reviews</h3>
+        <textarea id="prosText"></textarea>
+      </div>
+      <div class="box">
+        <h3>Number of Neutral Reviews</h3>
+        <textarea id="consText"></textarea>
+      </div>
+      <div class="box">
+        <h3>Number of Negative Reviews</h3>
+        <textarea id="negText"></textarea>
+      </div>
+    </div>
+    <p>Reviews from Best Buy and Amazon</p>
+   </body>
+   <script src="script.js"></script>
+</html>
