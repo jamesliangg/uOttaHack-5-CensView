@@ -40,9 +40,9 @@ async function fetchAsync (url) {
 
 async function updateValues (data) {
     var total = data[0]+data[1]+data[2];
-    document.getElementById("prosText").innerText = "50%";
+    document.getElementById("prosText").innerText = data[0].toString+"%";
     document.getElementById("lovers").style.width = "50%";
 
-    document.getElementById("consText").innerText = "50%";
+    document.getElementById("consText").innerText = data[2].toString+"%";
     document.getElementById("neutrals").style.width = "50%";
 }
