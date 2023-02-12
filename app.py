@@ -1,5 +1,6 @@
 import flask
-from flask import render_template, Flask, request
+from flask import Flask, request
+
 import sentimentAnalysis
 
 app = Flask(__name__)

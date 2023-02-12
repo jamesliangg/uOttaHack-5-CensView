@@ -1,8 +1,7 @@
+import cohere
+import requests
 from dumby import token
 
-import cohere 
-import requests
-import json
 co = cohere.Client(token)
 
 from cohere.classify import Example
