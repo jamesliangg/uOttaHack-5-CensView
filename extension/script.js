@@ -26,10 +26,10 @@ async function getInfo() {
 async function fetchAsync (url) {
     if(url.includes("bestbuy")){
         //http://127.0.0.1:5000?siteurl=https://www.bestbuy.ca/en-ca/product/sonos-arc-sound-bar-black/14597172&website=bestbuy
-        url = url.toString() + "website=bestbuy"
+        url = "http://127.0.0.1:5000?siteurl="+url.toString() + "&website=bestbuy"
     }else if(url.includes("amazon")){
         //http://127.0.0.1:5000?siteurl=https://www.amazon.ca/dp/B09F1QQZM2&website=amazon
-        url = url.toString() + "website=amazon"
+        url = "http://127.0.0.1:5000?siteurl="+url.toString() + "&website=amazon"
     }
     console.log("url:"+url);
     let response = await fetch(url);
