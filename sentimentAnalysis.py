@@ -1,12 +1,22 @@
 from dumby import token
+from flask import render_template, Flask
 import cohere 
+import requests
+import json
 co = cohere.Client(token)
+
+app = Flask(__name__)
+
 
 from cohere.classify import Example
 
+"""
 reviews = open('reviews.txt', 'r', encoding='utf-8')
 all_reviews = reviews.readlines()
 reviews.close()
+"""
+review_data = requests.get(url="http://127.0.0.1:3000/")
+data = (review_data.text).split("\n\n")
 negative = []
 positive = []
 neutral = []
@@ -29,8 +39,8 @@ examples=[
   Example("The product arrived yesterday", "neutral")
   ]
 
-for i in range(0,len(all_reviews)):
-    review = all_reviews[i]
+for i in range(0,len(data)):
+    review = data[i]
     review = [review]
     
 
@@ -45,4 +55,12 @@ for i in range(0,len(all_reviews)):
 
 print(negative, positive, neutral)
 print(len(negative), len(positive), len(neutral))
+
+return_dict = {
+    "negative": len(negative),
+    "positive": len(positive),
+    "neutral": len(neutral)
+}
+
+
         
