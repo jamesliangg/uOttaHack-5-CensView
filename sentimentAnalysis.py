@@ -1,3 +1,4 @@
+import flask
 from dumby import token
 from flask import render_template, Flask
 import cohere 
@@ -56,11 +57,20 @@ for i in range(0,len(data)):
 print(negative, positive, neutral)
 print(len(negative), len(positive), len(neutral))
 
-return_dict = {
-    "negative": len(negative),
-    "positive": len(positive),
-    "neutral": len(neutral)
-}
+values = [len(negative), len(positive), len(neutral)]
+
+return_values = []
+
+@app.route('/', methods=['GET'])
+def hello_world():
+    # return render_template('index.html', data=values)
+    print(str(values[0]))
+    resp = flask.Response(str(values[0]))
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+
+if __name__ == '__main__':
+    app.run()
 
 
         
