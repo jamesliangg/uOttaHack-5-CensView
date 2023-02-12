@@ -3,11 +3,6 @@ var butt = document.getElementById("myButton");
 if(butt){
     butt.addEventListener("click", function(){
         let data = getInfo();
-    
-        //get info about percentage of peeps that like it
-    
-        //change values
-        updateValues(data)
     });
 }else{
     console.log("it don't exist");
@@ -35,14 +30,18 @@ async function fetchAsync (url) {
     let response = await fetch(url);
     let data = await response.json();
     //gonna pass us [pos,neg,neu]
-    return data;
-}
-
-async function updateValues (data) {
+    
+    console.log("data: "+data)
+    console.log("pos"+data[0]);
+    console.log("neg"+data[1]);
+    console.log("neu"+data[2]);
     var total = data[0]+data[1]+data[2];
-    document.getElementById("prosText").innerText = data[0].toString+"%";
-    document.getElementById("lovers").style.width = "50%";
+    console.log("total"+total);
+    document.getElementById("prosText").innerText = data[0];
+    document.getElementById("lovers").style.width = ((data[0]/total).toString()+"%");
 
-    document.getElementById("consText").innerText = data[2].toString+"%";
-    document.getElementById("neutrals").style.width = "50%";
+    document.getElementById("consText").innerText = data[2];
+    document.getElementById("neutrals").style.width = ((data[2]/total*100).toString()+"%");
+
+    document.getElementById("negText").innerText = data[1];
 }
