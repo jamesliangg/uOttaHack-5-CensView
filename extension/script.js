@@ -2,12 +2,13 @@
 var butt = document.getElementById("myButton");
 if(butt){
     butt.addEventListener("click", function(){
+        console.log('clicked!')
+        document.getElementById("waiting").innerHTML = "Please Wait...";
+        document.getElementById("myButton").disabled = true;
         butt.disabled = true;
-        butt.style.backgroundColor = "#818181";
+        butt.style.backgroundColor = "#eec824";
         
         getInfo();
-        butt.disabled = false;
-        butt.style.backgroundColor = "#3e8e41";
     });
 }else{
     console.log("it don't exist");
@@ -48,4 +49,7 @@ async function fetchAsync (url) {
     document.getElementById("neutrals").style.width = (((total-data[0])/total*100).toString()+"%");
 
     document.getElementById("negText").innerText = data[0];
+    document.getElementById("myButton").disabled = false;
+    document.getElementById("myButton").style.backgroundColor = "#f2dc99";
+    document.getElementById("waiting").innerHTML = "&nbsp";
 }

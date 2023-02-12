@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang = "en">
    <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="default.css">
-    
+     <meta charset="utf-8">
+     <link rel="stylesheet" href="default.css">
+     <link href='https://fonts.googleapis.com/css?family=DM Serif Display' rel='stylesheet'>
+     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
   </head>
   <body>
-    <h1>CensView</h1>
-    
+<!--    <h1>CensView</h1>-->
+    <img src="CensViewlogo.jpg" alt="logo" height="80px" width="256px">
+    <hr>
     <p>This extension compares and analyzes review data of the site you are visiting.</p>
-    <p>Please click the "Analyze Reviews" button to start the analysis:</p>
+    <p>Click the "View Consensus" button to start the analysis:</p>
+    <p id="waiting">&nbsp</p>
     <button id="myButton" class="analyze-reviews-button">
       View Consensus
     </button>
@@ -37,7 +40,7 @@
         <textarea id="negText"></textarea>
       </div>
     </div>
-    <p>Reviews from Best Buy and Amazon</p>
+<!--    <p>Reviews from Best Buy and Amazon</p>-->
    </body>
    <script src="script.js"></script>
 </html>
