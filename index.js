@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
-import fs from "fs/promises";
-const testWebsite = 'https://www.bestbuy.ca/en-ca/product/sonos-arc-sound-bar-black/14597172';
-// const testWebsite = 'https://www.amazon.ca/dp/B09F1QQZM2';
+// import fs from "fs/promises";
+// const testWebsite = 'https://www.bestbuy.ca/en-ca/product/sonos-arc-sound-bar-black/14597172&website=bestbuy';
+// const testWebsite = 'https://www.amazon.ca/dp/B09F1QQZM2&website=amazon';
 
 // puppeteer tutorial https://youtube.com/watch?v=lgyszZhAZOI&feature=shares
 export async function callThisOne(website) {
@@ -27,15 +27,14 @@ async function scrapeWebsite(website, reviewSelector) {
     const reviews = await page.evaluate((reviewSelector) => {
         return Array.from(document.querySelectorAll(reviewSelector)).map(x => x.textContent)
     }, reviewSelector);
-    await fs.writeFile('reviews.txt', reviews.join('\r\n'));
+    // await fs.writeFile('reviews.txt', reviews.join('\r\n'));
     await browser.close();
     return reviews;
 }
 
 // console.log(callThisOne(testWebsite));
-let reviewResults = callThisOne(testWebsite);
-console.log(reviewResults);
+// let reviewResults = '';
 
-reviewResults.then(function(result) {
-    console.log(JSON.stringify(result));
-});
+// reviewResults.then(function(result) {
+//     console.log(JSON.stringify(result));
+// });
