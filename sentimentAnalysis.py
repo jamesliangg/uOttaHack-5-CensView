@@ -8,11 +8,8 @@ from cohere.classify import Example
 
 def sentimental(websiteUrl, websiteService):
     review_data = requests.get(url="http://127.0.0.1:3000/?siteurl=" + websiteUrl)
-    if websiteService == "bestbuy": 
-        data = (review_data.text).split("\\n\\n")
-    elif websiteService == "amazon":
-        data = (review_data.text).split('","')
-        
+    data = (review_data.text).split('","')
+
     
     negative = []
     positive = []
