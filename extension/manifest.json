@@ -1,12 +1,18 @@
 {
   "manifest_version": 3,
   "name": "CensView",
-  "description": "Base Level Extension",
+  "description": "Finds the consensus of reviews of different products. Currently has functionality for both Amazon.ca and BestBuy.ca.",
   "version": "1.0",
   "permissions": [
     "tabs",
     "activeTab"
   ],
+  "icons": {
+    "16": "AppIcon.png",
+    "32": "AppIcon.png",
+    "48": "AppIcon.png",
+    "128": "AppIcon.png"
+  },
   "host_permissions": [
     "http://*/*",
     "https://*/*"
