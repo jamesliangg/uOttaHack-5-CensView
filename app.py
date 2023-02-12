@@ -7,9 +7,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    args = request.args.get('siteurl')
-    print(args)
-    values = sentimentAnalysis.sentimental(args)
+    websiteUrl = request.args.get('siteurl')
+    websiteService = request.args.get('website')
+    print(websiteUrl)
+    print(websiteService)
+    values = sentimentAnalysis.sentimental(websiteUrl, websiteService)
     resp = flask.Response(str(values))
     resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
