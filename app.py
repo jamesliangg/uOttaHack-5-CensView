@@ -9,8 +9,7 @@ def hello_world():
     args = request.args.get('siteurl')
     print(args)
     values = sentimentAnalysis.sentimental(args)
-    print(str(values[0]))
-    resp = flask.Response(str(values[0]))
+    resp = flask.Response(str(values))
     resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
 
