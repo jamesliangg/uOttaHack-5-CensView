@@ -37,5 +37,5 @@ let reviewResults = callThisOne(testWebsite);
 console.log(reviewResults);
 
 reviewResults.then(function(result) {
-    console.log(result);
+    console.log(JSON.stringify(result));
 });
