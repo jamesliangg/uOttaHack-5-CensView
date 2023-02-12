@@ -16,4 +16,4 @@ token = 'API_TOKEN'
 ```
 7. in terminal2 window run `flask --app app run`
 8. in terminal1 window run `node app`
-9. Can sent a GET request to flask for array result `http://127.0.0.1:5000?siteurl=https://www.bestbuy.ca/en-ca/product/sonos-arc-sound-bar-black/14597172`
+9. Can send a GET request to flask for array result `http://127.0.0.1:5000?siteurl=https://www.bestbuy.ca/en-ca/product/sonos-arc-sound-bar-black/14597172`
