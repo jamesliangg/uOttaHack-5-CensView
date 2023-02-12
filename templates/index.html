@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="default.css">
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <!-- Color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+   </head>
+
+   <body>
+    <p>Company</p>
+    <div class="container">
+      <div class="percentage">90%</div>
+    </div>
+    <h1>CensView</h1>
+    <p>This extension compares and analyzes review data of the site you are visiting.</p>
+    <p>Please click the "Analyze Reviews" button to start the analysis:</p>
+    <button id="analyze-reviews-button" onclick="let x ={ data }; console.log(x)">
+      Analyze Reviews
+    </button>
+    <div class="textcontainer">
+      <div class="box">
+        <h3>Pros</h3>
+        <textarea id="prosText"></textarea>
+      </div>
+      <div class="box">
+        <h3>Cons</h3>
+        <textarea id="consText"></textarea>
+      </div>
+    </div>
+   </body>
+</html>
+
+<script>
+  document.getElementById("analyze-reviews-button").addEventListener("click", function() {
+        // Do Something
+        bar = document.getElementsByClassName('percentage');
+        button.width = '10%'
+        console.log("did something")
+        
+      });
+    
+     
+</script>
