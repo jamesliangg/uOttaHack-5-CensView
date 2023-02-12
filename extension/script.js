@@ -43,7 +43,7 @@ async function fetchAsync (url) {
     var total = data[0]+data[1]+data[2];
     console.log("total"+total);
     document.getElementById("prosText").innerText = data[1];
-    document.getElementById("lovers").style.width = ((data[1]/total*100).toString()+"%");
+    document.getElementById("lovers").style.width = (((data[1]/total)*(total/(total-data[0]))*100).toString()+"%");
 
     document.getElementById("consText").innerText = data[2];
     document.getElementById("neutrals").style.width = (((total-data[0])/total*100).toString()+"%");
