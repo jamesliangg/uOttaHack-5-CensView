@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
+  "name": "CensView",
   "description": "Base Level Extension",
   "version": "1.0",
   "permissions": [
@@ -13,6 +13,6 @@
   ],
   "action": {
     "default_popup": "reviewSummarizer.html",
-    "default_icon": "helloExtensions.png"
+    "default_icon": "AppIcon.png"
   }
 }
